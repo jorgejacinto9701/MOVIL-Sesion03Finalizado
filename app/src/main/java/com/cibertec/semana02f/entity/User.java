@@ -6,9 +6,25 @@ public class User {
     private String name;
     private String username;
     private String email;
+    private Address address;
     private String phone;
     private String website;
+    private Company company;
 
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    public Company getCompany() {
+        return company;
+    }
+    public void setCompany(Company company) {
+        this.company = company;
+    }
     public int getId() {
         return id;
     }

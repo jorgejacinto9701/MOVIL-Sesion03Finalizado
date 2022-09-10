@@ -55,9 +55,38 @@ public class MainActivity extends AppCompatActivity {
         spnUsuario = findViewById(R.id.spnUsarios);
         spnUsuario.setAdapter(adaptador);
 
-
         cargaUsuarios();
 
+        btnBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int pos = spnUsuario.getSelectedItemPosition();
+                User objUser = lstUsuarios.get(pos);
+
+                String msg = "Datos del Usuario : \n\n";
+                msg += "Id : " + objUser.getId() + "\n";
+                msg += "Name : " + objUser.getName() + "\n";
+                msg += "Username : " + objUser.getUsername() + "\n";
+                msg += "Email : " + objUser.getEmail() + "\n";
+                msg += "Phone : " + objUser.getPhone() + "\n";
+                msg += "Website : " + objUser.getWebsite() + "\n\n";
+                msg += "Company : \n\n";
+                msg += "Name : " + objUser.getCompany().getName() + "\n";
+                msg += "CatchPhrase : " + objUser.getCompany().getCatchPhrase() + "\n";
+                msg += "Bs : " + objUser.getCompany().getBs() + "\n\n";
+                msg += "Address : \n\n";
+                msg += "Sreet : " + objUser.getAddress().getStreet() + "\n";
+                msg += "Suite : " + objUser.getAddress().getSuite() + "\n";
+                msg += "City : " + objUser.getAddress().getCity() + "\n";
+                msg += "Zipcode : " + objUser.getAddress().getZipcode() + "\n\n";
+                msg += "Geo : \n\n";
+                msg += "Lat : " + objUser.getAddress().getGeo().getLat() + "\n";
+                msg += "Lng : " + objUser.getAddress().getGeo().getLng() + "\n";
+
+                txtSalida.setText(msg);
+
+            }
+        });
 
     }
 

@@ -15,7 +15,6 @@
         android:layout_height="wrap_content"
         android:text="Información del Usuario"
         android:textAlignment="center"
-        android:padding="10dp"
         android:layout_margin="10dp"/>
 
     <Spinner
@@ -32,11 +31,19 @@
         android:text="Buscar"
         android:layout_margin="10dp"/>
 
-    <TextView
-        android:id="@+id/txtSalida"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Sin datos"
-        android:padding="10dp"
-        android:layout_margin="10dp"/>
+        android:scrollbars="vertical"
+        android:fillViewport="true">
+
+        <TextView
+            android:id="@+id/txtSalida"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Sin datos"
+            android:layout_margin="10dp"/>
+
+    </ScrollView>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
